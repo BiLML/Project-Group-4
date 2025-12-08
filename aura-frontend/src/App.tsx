@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './Login';
 import Dashboard from './dashboard';
 import './App.css';
+import Register from './Register';
 
 // 🛡️ Component Bảo Vệ Tuyến Đường
 // Nhiệm vụ: Kiểm tra token trong localStorage. Nếu có, cho phép truy cập, nếu không, chuyển hướng về /login.
@@ -26,6 +27,8 @@ const App: React.FC = () => {
         <Routes>
           {/* 1. Tuyến đường Đăng nhập (Công khai) */}
           <Route path="/login" element={<Login />} />
+
+          <Route path="/register" element={<Register />} />
           
           {/* 2. Tuyến đường Trang Chủ (Bảo vệ) */}
           {/* Khi truy cập /dashboard, ProtectedRoute sẽ kiểm tra trạng thái đăng nhập */}
